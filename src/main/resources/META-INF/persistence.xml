@@ -13,18 +13,9 @@
             <property name="jakarta.persistence.jdbc.password" value="password"/>
             <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
             <property name="jakarta.persistence.schema-generation.database.action" value="create"/>
-            <property name="jakarta.persistence.sharedCache.mode" value="DISABLE_SELECTIVE"/>
             <property name="eclipselink.cache.shared.default" value="true"/>
             <property name="eclipselink.logging.level.sql" value="FINE"/>
         </properties>
-
-<!--        <class>edu.miu.cs544.moe.part1.entity.Student</class>-->
-<!--        <class>edu.miu.cs544.moe.part1.entity.Course</class>-->
-<!--        <class>edu.miu.cs544.moe.part1.entity.CourseRoom</class>-->
-<!--        <class>edu.miu.cs544.moe.part2.entity.Car</class>-->
-<!--        <class>edu.miu.cs544.moe.part2.entity.Person</class>-->
-<!--        <class>edu.miu.cs544.moe.part2.entity.Owner</class>-->
-<!--        <class>edu.miu.cs544.moe.part2.entity.Driver</class>-->
 
     </persistence-unit>
 </persistence>

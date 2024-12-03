@@ -1,6 +1,5 @@
 package edu.miu.cs544.moe.entity;
 
-import jakarta.persistence.Cacheable;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 
@@ -8,7 +7,6 @@ import java.util.Date;
 
 @Entity
 @Table(name = "ON_CAMPUS")
-@Cacheable
 public class OnCampus extends Course {
     private String room;
     private int capacity;
