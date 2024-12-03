@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_2.xsd"
+             version="3.2">
+    <persistence-unit name="my-pu">
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+        <exclude-unlisted-classes>false</exclude-unlisted-classes>
+        <shared-cache-mode>DISABLE_SELECTIVE</shared-cache-mode>
+        <properties>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/mydb"/>
+            <property name="jakarta.persistence.jdbc.user" value="admin"/>
+            <property name="jakarta.persistence.jdbc.password" value="password"/>
+            <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+            <property name="jakarta.persistence.schema-generation.database.action" value="create"/>
+            <property name="jakarta.persistence.sharedCache.mode" value="DISABLE_SELECTIVE"/>
+            <property name="eclipselink.cache.shared.default" value="true"/>
+            <property name="eclipselink.logging.level.sql" value="FINE"/>
+        </properties>
+
+<!--        <class>edu.miu.cs544.moe.part1.entity.Student</class>-->
+<!--        <class>edu.miu.cs544.moe.part1.entity.Course</class>-->
+<!--        <class>edu.miu.cs544.moe.part1.entity.CourseRoom</class>-->
+<!--        <class>edu.miu.cs544.moe.part2.entity.Car</class>-->
+<!--        <class>edu.miu.cs544.moe.part2.entity.Person</class>-->
+<!--        <class>edu.miu.cs544.moe.part2.entity.Owner</class>-->
+<!--        <class>edu.miu.cs544.moe.part2.entity.Driver</class>-->
+
+    </persistence-unit>
+</persistence>
