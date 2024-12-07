@@ -6,6 +6,7 @@ import edu.miu.cs544.moe.entity.Student;
 import edu.miu.cs544.moe.service.DistanceEducationService;
 import edu.miu.cs544.moe.service.OnCampusService;
 import edu.miu.cs544.moe.service.StudentService;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Arrays;
 import java.util.Date;
@@ -15,14 +16,17 @@ public class Seeder {
     private DistanceEducationService distanceEducationService;
     private OnCampusService onCampusService;
 
+    @Autowired
     public void setStudentService(StudentService studentService) {
         this.studentService = studentService;
     }
 
+    @Autowired
     public void setDistanceEducationService(DistanceEducationService distanceEducationService) {
         this.distanceEducationService = distanceEducationService;
     }
 
+    @Autowired
     public void setOnCampusService(OnCampusService onCampusService) {
         this.onCampusService = onCampusService;
     }

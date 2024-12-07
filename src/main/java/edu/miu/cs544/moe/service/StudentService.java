@@ -6,11 +6,14 @@ import edu.miu.cs544.moe.entity.DistanceEducation;
 import edu.miu.cs544.moe.entity.Student;
 import jakarta.persistence.TypedQuery;
 import jakarta.persistence.criteria.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.Collection;
 
+@Component
 public class StudentService extends AbstractService<Student> implements Service<Student> {
-
+    @Autowired
     public StudentService(EntityManagerWrapper entityManagerWrapper) {
         super(entityManagerWrapper, Student.class);
     }
