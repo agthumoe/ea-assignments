@@ -1,4 +1,4 @@
-package edu.miu.cs544.moe;
+package edu.miu.cs544.moe.configs;
 
 import edu.miu.cs544.moe.entity.DistanceEducation;
 import edu.miu.cs544.moe.entity.OnCampus;
@@ -10,15 +10,24 @@ import edu.miu.cs544.moe.service.StudentService;
 import java.util.Arrays;
 import java.util.Date;
 
-public final class Util {
-    private static final String PERSISTENT_UNIT = "my-pu";
-    private Util() {
+public class Seeder {
+    private StudentService studentService;
+    private DistanceEducationService distanceEducationService;
+    private OnCampusService onCampusService;
+
+    public void setStudentService(StudentService studentService) {
+        this.studentService = studentService;
     }
 
-    public static void seed() {
-        try (StudentService studentService = new StudentService(PERSISTENT_UNIT);
-             DistanceEducationService distanceEducationService = new DistanceEducationService(PERSISTENT_UNIT);
-             OnCampusService onCampusService = new OnCampusService(PERSISTENT_UNIT)) {
+    public void setDistanceEducationService(DistanceEducationService distanceEducationService) {
+        this.distanceEducationService = distanceEducationService;
+    }
+
+    public void setOnCampusService(OnCampusService onCampusService) {
+        this.onCampusService = onCampusService;
+    }
+
+    public void seed() {
             Student alice = studentService.save(new Student("Alice", 3));
             Student bob = studentService.save(new Student("Bob", 3.6));
             Student charlie = studentService.save(new Student("Charlie", 4));
@@ -105,8 +114,5 @@ public final class Util {
             charlie.getCoursesAttended().add(de6);
             studentService.update(charlie);
             System.out.println("Done seeding...");
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
     }
 }

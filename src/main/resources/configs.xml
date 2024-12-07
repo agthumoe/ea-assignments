@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="entityManagerWrapper" class="edu.miu.cs544.moe.configs.EntityManagerWrapper">
+        <constructor-arg name="persistenceUnitName" value="my-pu"/>
+    </bean>
+    <bean id="studentService" class="edu.miu.cs544.moe.service.StudentService" autowire="constructor" />
+    <bean id="onCampusService" class="edu.miu.cs544.moe.service.OnCampusService" autowire="constructor" />
+    <bean id="distanceEducationService" class="edu.miu.cs544.moe.service.DistanceEducationService" autowire="constructor" />
+    <bean id="seeder" class="edu.miu.cs544.moe.configs.Seeder" autowire="byType" />
+</beans>
